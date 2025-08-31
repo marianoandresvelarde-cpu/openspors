@@ -345,10 +345,10 @@ const BrandsPartnerDashboard = ({
       <main className="p-4 space-y-6">
         <div className="flex items-center justify-between">
           <div>
-            <h2 className="text-2xl font-bold text-balance text-white">Panel de Marcas Whitelist</h2>
-            <p className="text-slate-400">Exclusividad de compra • Trazabilidad completa • Beneficios garantizados</p>
+            <h2 className="text-2xl font-bold text-balance text-white">Whitelist Brands Panel</h2>
+            <p className="text-slate-400">Purchase exclusivity • Complete traceability • Guaranteed benefits</p>
           </div>
-          <Badge className="bg-purple-500/20 text-purple-400 border-purple-500/30 px-3 py-1">Marca Whitelist</Badge>
+          <Badge className="bg-purple-500/20 text-purple-400 border-purple-500/30 px-3 py-1">Whitelist Brand</Badge>
         </div>
 
         <Card className="bg-gradient-to-r from-emerald-500/10 to-blue-500/10 border-emerald-500/30 backdrop-blur-sm">
@@ -357,22 +357,20 @@ const BrandsPartnerDashboard = ({
               <div className="w-8 h-8 bg-emerald-500/20 rounded-lg flex items-center justify-center">
                 <DollarSign className="h-4 w-4 text-emerald-400" />
               </div>
-              <h3 className="text-lg font-semibold text-white">Modelo de Exclusividad OpenSport</h3>
+              <h3 className="text-lg font-semibold text-white">OpenSport Exclusivity Model</h3>
             </div>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-4 text-sm">
               <div className="space-y-1">
-                <p className="text-emerald-400 font-medium">Exclusividad de Compra</p>
-                <p className="text-slate-300">
-                  Los deportistas solo pueden gastar dinero de inversión en marcas whitelist
-                </p>
+                <p className="text-emerald-400 font-medium">Purchase Exclusivity</p>
+                <p className="text-slate-300">Athletes can only spend investment money on whitelist brands</p>
               </div>
               <div className="space-y-1">
-                <p className="text-blue-400 font-medium">Comisión OpenSport</p>
-                <p className="text-slate-300">8% del total recaudado + 1% del deportista</p>
+                <p className="text-blue-400 font-medium">OpenSport Commission</p>
+                <p className="text-slate-300">8% of total raised + 1% from athlete</p>
               </div>
               <div className="space-y-1">
-                <p className="text-purple-400 font-medium">Fee Whitelist</p>
-                <p className="text-slate-300">Pago mensual por acceso exclusivo a la plataforma</p>
+                <p className="text-purple-400 font-medium">Whitelist Fee</p>
+                <p className="text-slate-300">Monthly payment for exclusive platform access</p>
               </div>
             </div>
           </CardContent>
@@ -384,7 +382,7 @@ const BrandsPartnerDashboard = ({
             <CardContent className="p-4">
               <div className="flex items-center justify-between">
                 <div>
-                  <p className="text-sm text-slate-400">Atletas Exclusivos</p>
+                  <p className="text-sm text-slate-400">Exclusive Athletes</p>
                   <p className="text-2xl font-bold text-white">24</p>
                 </div>
                 <div className="w-10 h-10 bg-blue-500/20 rounded-lg flex items-center justify-center">
@@ -398,7 +396,7 @@ const BrandsPartnerDashboard = ({
             <CardContent className="p-4">
               <div className="flex items-center justify-between">
                 <div>
-                  <p className="text-sm text-slate-400">Gasto Garantizado</p>
+                  <p className="text-sm text-slate-400">Guaranteed Spending</p>
                   <p className="text-2xl font-bold text-white">$18,450</p>
                 </div>
                 <div className="w-10 h-10 bg-emerald-500/20 rounded-lg flex items-center justify-center">
@@ -412,7 +410,7 @@ const BrandsPartnerDashboard = ({
             <CardContent className="p-4">
               <div className="flex items-center justify-between">
                 <div>
-                  <p className="text-sm text-slate-400">Fee Whitelist</p>
+                  <p className="text-sm text-slate-400">Whitelist Fee</p>
                   <p className="text-2xl font-bold text-white">$299</p>
                 </div>
                 <div className="w-10 h-10 bg-purple-500/20 rounded-lg flex items-center justify-center">
@@ -426,7 +424,7 @@ const BrandsPartnerDashboard = ({
             <CardContent className="p-4">
               <div className="flex items-center justify-between">
                 <div>
-                  <p className="text-sm text-slate-400">ROI Exclusivo</p>
+                  <p className="text-sm text-slate-400">Exclusive ROI</p>
                   <p className="text-2xl font-bold text-white">+28%</p>
                 </div>
                 <div className="w-10 h-10 bg-yellow-500/20 rounded-lg flex items-center justify-center">
@@ -442,21 +440,19 @@ const BrandsPartnerDashboard = ({
           <CardHeader>
             <CardTitle className="text-xl text-white flex items-center gap-2">
               <Target className="h-5 w-5 text-emerald-400" />
-              Trazabilidad Exclusiva de Gastos
+              Exclusive Spending Traceability
             </CardTitle>
-            <p className="text-sm text-slate-400">
-              100% de las compras de deportistas se realizan únicamente en marcas whitelist
-            </p>
+            <p className="text-sm text-slate-400">100% of athlete purchases are made exclusively on whitelist brands</p>
           </CardHeader>
           <CardContent className="space-y-4">
             <div className="bg-emerald-500/10 border border-emerald-500/30 rounded-lg p-3 mb-4">
               <div className="flex items-center gap-2 mb-2">
                 <div className="w-4 h-4 bg-emerald-500 rounded-full"></div>
-                <span className="text-sm font-medium text-emerald-400">Exclusividad Garantizada</span>
+                <span className="text-sm font-medium text-emerald-400">Guaranteed Exclusivity</span>
               </div>
               <p className="text-xs text-slate-300">
-                Los deportistas no pueden gastar dinero de inversión fuera de las marcas whitelist, garantizando el 100%
-                de trazabilidad y exclusividad de compra.
+                Athletes cannot spend investment money outside whitelist brands, guaranteeing 100% traceability and
+                purchase exclusivity.
               </p>
             </div>
 
@@ -469,12 +465,12 @@ const BrandsPartnerDashboard = ({
                   </Avatar>
                   <div>
                     <p className="text-sm font-medium text-white">Alex Rodriguez</p>
-                    <p className="text-xs text-slate-400">Mediocampista • Argentina</p>
+                    <p className="text-xs text-slate-400">Midfielder • Argentina</p>
                   </div>
                 </div>
                 <div className="text-right">
                   <p className="text-sm font-semibold text-emerald-400">$2,100</p>
-                  <p className="text-xs text-slate-400">Total gastado</p>
+                  <p className="text-xs text-slate-400">Total spent</p>
                 </div>
               </div>
 
@@ -502,7 +498,7 @@ const BrandsPartnerDashboard = ({
           <CardHeader>
             <CardTitle className="text-xl text-white flex items-center gap-2">
               <Star className="h-5 w-5 text-yellow-400" />
-              Impacto de Marca
+              Brand Impact
             </CardTitle>
           </CardHeader>
           <CardContent className="space-y-4">
@@ -511,33 +507,33 @@ const BrandsPartnerDashboard = ({
                 <h4 className="text-sm font-semibold text-slate-300">Video Exposure</h4>
                 <div className="space-y-2">
                   <div className="flex justify-between items-center">
-                    <span className="text-sm text-slate-400">Videos con tu marca</span>
+                    <span className="text-sm text-slate-400">Videos with your brand</span>
                     <span className="text-sm text-white">47</span>
                   </div>
                   <div className="flex justify-between items-center">
-                    <span className="text-sm text-slate-400">Visualizaciones totales</span>
+                    <span className="text-sm text-slate-400">Total views</span>
                     <span className="text-sm text-white">125,430</span>
                   </div>
                   <div className="flex justify-between items-center">
-                    <span className="text-sm text-slate-400">Engagement promedio</span>
+                    <span className="text-sm text-slate-400">Average engagement</span>
                     <span className="text-sm text-emerald-400">8.7%</span>
                   </div>
                 </div>
               </div>
 
               <div className="space-y-3">
-                <h4 className="text-sm font-semibold text-slate-300">Rendimiento de Atletas</h4>
+                <h4 className="text-sm font-semibold text-slate-300">Athletes Performance</h4>
                 <div className="space-y-2">
                   <div className="flex justify-between items-center">
-                    <span className="text-sm text-slate-400">Rating promedio</span>
+                    <span className="text-sm text-slate-400">Average rating</span>
                     <span className="text-sm text-white">7.8/10</span>
                   </div>
                   <div className="flex justify-between items-center">
-                    <span className="text-sm text-slate-400">Mejora desde partnership</span>
+                    <span className="text-sm text-slate-400">Improvement since partnership</span>
                     <span className="text-sm text-emerald-400">+15%</span>
                   </div>
                   <div className="flex justify-between items-center">
-                    <span className="text-sm text-slate-400">Atletas destacados</span>
+                    <span className="text-sm text-slate-400">Featured athletes</span>
                     <span className="text-sm text-white">8</span>
                   </div>
                 </div>
@@ -1047,10 +1043,10 @@ export default function SportifyApp() {
         <main className="p-4 space-y-6">
           <div className="flex items-center justify-between">
             <div>
-              <h2 className="text-2xl font-bold text-balance text-white">Descubre Atletas</h2>
-              <p className="text-slate-400">Encuentra e invierte en talento prometedor</p>
+              <h2 className="text-2xl font-bold text-balance text-white">Discover Athletes</h2>
+              <p className="text-slate-400">Find and invest in promising talent</p>
             </div>
-            <Badge className="bg-emerald-500/20 text-emerald-400 border-emerald-500/30 px-3 py-1">Inversor</Badge>
+            <Badge className="bg-emerald-500/20 text-emerald-400 border-emerald-500/30 px-3 py-1">Investor</Badge>
           </div>
 
           <div className="space-y-4">
@@ -1083,7 +1079,7 @@ export default function SportifyApp() {
                           <span>•</span>
                           <span>{athlete.position}</span>
                           <span>•</span>
-                          <span>{athlete.age} años</span>
+                          <span>{athlete.age} years old</span>
                         </div>
                         <p className="text-sm text-slate-400">{athlete.location}</p>
                       </div>
@@ -1099,7 +1095,7 @@ export default function SportifyApp() {
                     </div>
 
                     <div className="mb-4">
-                      <h4 className="text-sm font-semibold mb-2 text-slate-300">Objetivos de Carrera</h4>
+                      <h4 className="text-sm font-semibold mb-2 text-slate-300">Career Objectives</h4>
                       <div className="flex flex-wrap gap-2">
                         {athlete.goals.map((goal, index) => (
                           <Badge
@@ -1114,22 +1110,20 @@ export default function SportifyApp() {
 
                     <div className="mb-4">
                       <div className="flex justify-between text-sm mb-2">
-                        <span className="text-slate-300">Progreso de Inversión</span>
+                        <span className="text-slate-300">Investment Progress</span>
                         <span className="text-emerald-400 font-semibold">
                           ${athlete.currentInvestment.toLocaleString()} / ${athlete.investmentGoal.toLocaleString()}
                         </span>
                       </div>
                       <Progress
                         value={(athlete.currentInvestment / athlete.investmentGoal) * 100}
-                        className="h-2 mb-2 bg-slate-700"
+                        className="h-2 mb-2 bg-slate-700 [&>div]:bg-emerald-500"
                       />
                       <div className="flex justify-between text-xs text-slate-400">
                         <span>
                           ROI: <span className="text-emerald-400 font-semibold">{athlete.roi}</span>
                         </span>
-                        <span>
-                          {Math.round((athlete.currentInvestment / athlete.investmentGoal) * 100)}% financiado
-                        </span>
+                        <span>{Math.round((athlete.currentInvestment / athlete.investmentGoal) * 100)}% funded</span>
                       </div>
                     </div>
 
@@ -1140,7 +1134,7 @@ export default function SportifyApp() {
                         className="flex-1 border-slate-600 text-slate-300 hover:bg-slate-700 hover:text-white text-sm py-2 bg-transparent"
                         onClick={() => setSelectedAthlete(selectedAthlete === athlete.id ? null : athlete.id)}
                       >
-                        {selectedAthlete === athlete.id ? "Ocultar" : "Ver Detalles"}
+                        {selectedAthlete === athlete.id ? "Hide" : "View Details"}
                       </Button>
                       <Button
                         variant="outline"
@@ -1149,7 +1143,7 @@ export default function SportifyApp() {
                         onClick={() => setShowVideoModal(athlete.id)}
                       >
                         <PlayCircle className="h-3 w-3 mr-1" />
-                        Ver Videos
+                        View Videos
                       </Button>
                       <Button
                         size="sm"
@@ -1157,7 +1151,7 @@ export default function SportifyApp() {
                         onClick={() => setShowInvestmentModal(athlete.id)}
                       >
                         <DollarSign className="h-3 w-3 mr-1" />
-                        Invertir
+                        Invest
                       </Button>
                     </div>
                   </div>
@@ -1192,7 +1186,7 @@ export default function SportifyApp() {
                       <div className="border-t border-slate-600 pt-4">
                         <h4 className="font-semibold mb-3 text-white flex items-center gap-2">
                           <Target className="h-4 w-4 text-emerald-400" />
-                          Gastos y Marcas Utilizadas
+                          Spending and Brands Used
                         </h4>
                         <div className="space-y-3">
                           {spendingHistory.map((expense, index) => (
@@ -1219,15 +1213,13 @@ export default function SportifyApp() {
                         </div>
                         <div className="mt-4 p-3 bg-emerald-500/10 border border-emerald-500/20 rounded-lg">
                           <div className="flex items-center justify-between">
-                            <span className="text-sm text-emerald-400 font-medium">
-                              Total Gastado en Marcas Partner
-                            </span>
+                            <span className="text-sm text-emerald-400 font-medium">Total Spent on Partner Brands</span>
                             <span className="text-lg font-bold text-emerald-400">
                               ${spendingHistory.reduce((total, expense) => total + expense.amount, 0).toLocaleString()}
                             </span>
                           </div>
                           <p className="text-xs text-slate-400 mt-1">
-                            Trazabilidad completa de inversión • {spendingHistory.length} transacciones
+                            Complete investment traceability • {spendingHistory.length} transactions
                           </p>
                         </div>
                       </div>
@@ -1422,7 +1414,7 @@ export default function SportifyApp() {
         <Card className="w-full max-w-md bg-slate-800 border-slate-700">
           <CardHeader className="pb-4">
             <div className="flex items-center justify-between">
-              <CardTitle className="text-xl text-white">Videos de {athlete.name}</CardTitle>
+              <CardTitle className="text-xl text-white">{athlete.name} Videos</CardTitle>
               <Button
                 variant="ghost"
                 size="sm"
@@ -1734,10 +1726,10 @@ const AthleteDashboard = ({
       <main className="p-4 space-y-6">
         <div className="flex items-center justify-between">
           <div>
-            <h2 className="text-2xl font-bold text-balance text-white">Panel de Atleta</h2>
-            <p className="text-slate-400">Sube videos • Completa retos • Obtén inversión</p>
+            <h2 className="text-2xl font-bold text-balance text-white">Athlete Panel</h2>
+            <p className="text-slate-400">Upload videos • Complete challenges • Get investment</p>
           </div>
-          <Badge className="bg-blue-500/20 text-blue-400 border-blue-500/30 px-3 py-1">Atleta</Badge>
+          <Badge className="bg-blue-500/20 text-blue-400 border-blue-500/30 px-3 py-1">Athlete</Badge>
         </div>
 
         <Card className="bg-slate-800/50 border-slate-700 backdrop-blur-sm">
@@ -1795,19 +1787,19 @@ const AthleteDashboard = ({
               <Tabs value={activeTab} onValueChange={setActiveTab} className="w-full">
                 <TabsList className="p-4 justify-center">
                   <TabsTrigger value="profile" className="data-[state=active]:text-white">
-                    Perfil
+                    Profile
                   </TabsTrigger>
                   <TabsTrigger value="challenges" className="data-[state=active]:text-white">
-                    Retos
+                    Challenges
                   </TabsTrigger>
                   <TabsTrigger value="objectives" className="data-[state=active]:text-white">
-                    Objetivos
+                    Objectives
                   </TabsTrigger>
                 </TabsList>
                 <TabsContent value="profile" className="space-y-4 p-4">
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                     <div className="space-y-3">
-                      <h4 className="text-sm font-semibold text-slate-300">Estadísticas</h4>
+                      <h4 className="text-sm font-semibold text-slate-300">Statistics</h4>
                       <div className="grid grid-cols-2 gap-4">
                         {Object.entries(athleteProfile.stats).map(([key, value]) => (
                           <div key={key} className="text-center">
@@ -1819,7 +1811,7 @@ const AthleteDashboard = ({
                     </div>
 
                     <div className="space-y-3">
-                      <h4 className="text-sm font-semibold text-slate-300">Habilidades</h4>
+                      <h4 className="text-sm font-semibold text-slate-300">Skills</h4>
                       <div className="space-y-2">
                         {skillCategories.map((skill) => (
                           <div key={skill.name} className="flex justify-between items-center">
@@ -1861,10 +1853,8 @@ const AthleteDashboard = ({
                             {challenge.difficulty}
                           </Badge>
                           <div className="flex items-center justify-between mt-2">
-                            <span className="text-sm text-slate-300">Progreso</span>
-                            <span className="text-sm text-white">
-                              {challenge.completed ? "Completado" : "Pendiente"}
-                            </span>
+                            <span className="text-sm text-slate-300">Progress</span>
+                            <span className="text-sm text-white">{challenge.completed ? "Completed" : "Pending"}</span>
                           </div>
                         </CardContent>
                       </Card>
@@ -1882,15 +1872,15 @@ const AthleteDashboard = ({
                         </CardHeader>
                         <CardContent className="space-y-3">
                           <div className="flex items-center justify-between">
-                            <span className="text-sm text-slate-300">Plan Actual</span>
+                            <span className="text-sm text-slate-300">Current Plan</span>
                             <span className="text-sm text-white">{objective.currentPlan}</span>
                           </div>
                           <div className="flex items-center justify-between">
-                            <span className="text-sm text-slate-300">Plan Recomendado</span>
+                            <span className="text-sm text-slate-300">Recommended Plan</span>
                             <span className="text-sm text-emerald-400">{objective.recommendedPlan}</span>
                           </div>
                           <div className="flex items-center justify-between">
-                            <span className="text-sm text-slate-300">Costo Mensual</span>
+                            <span className="text-sm text-slate-300">Monthly Cost</span>
                             <span className="text-sm text-emerald-400">${objective.cost}</span>
                           </div>
                         </CardContent>
@@ -1899,13 +1889,13 @@ const AthleteDashboard = ({
                   </div>
                   <div className="mt-4 p-3 bg-blue-500/10 border border-blue-500/20 rounded-lg">
                     <div className="flex items-center justify-between">
-                      <span className="text-sm text-blue-400 font-medium">Total Necesario Mensual</span>
+                      <span className="text-sm text-blue-400 font-medium">Total Monthly Needed</span>
                       <span className="text-lg font-bold text-blue-400">
                         ${athleteProfile.careerObjectives.totalMonthlyNeeds}
                       </span>
                     </div>
                     <p className="text-xs text-slate-400 mt-1">
-                      Inversión necesaria para alcanzar objetivos • Seguimiento transparente
+                      Investment needed to reach objectives • Transparent tracking
                     </p>
                   </div>
                 </TabsContent>
