@@ -669,7 +669,7 @@ export default function SportifyApp() {
 
       const result = await footballTokenAPI.deployContract({
         playerWallet: walletState.address || `0x${athlete.id.toString().padStart(40, "0")}`, // Use connected wallet or mock
-        platformWallet: "0x8ba1f109551bD432803012645cac136c777CC5e", // Platform wallet
+        platformWallet: "0x8ba1f109551bD432803012645cac136c777CC5ec", // Platform wallet
         name: `${athlete.name} Token`,
         symbol: athlete.name
           .split(" ")
