@@ -1287,103 +1287,120 @@ export default function SportifyApp() {
 
   const UserTypeSelection = () => {
     return (
-      <div className="min-h-screen bg-gradient-to-br from-white via-slate-50 to-emerald-50 flex items-center justify-center p-4">
+      <div className="min-h-screen bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900 flex items-center justify-center p-4">
         <div className="w-full max-w-4xl mx-auto text-center space-y-12">
-          {/* Logo and Welcome Section */}
           <div className="space-y-6">
-            <div className="inline-flex items-center justify-center w-20 h-20 bg-primary rounded-2xl shadow-lg mb-6">
-              <div className="w-10 h-10 bg-white rounded-lg flex items-center justify-center">
-                <div className="w-6 h-6 bg-primary rounded-full"></div>
-              </div>
-            </div>
-
             <div className="space-y-4">
-              <h1 className="text-5xl md:text-6xl font-poppins font-bold text-foreground text-balance">
+              <h1 className="text-5xl md:text-6xl font-poppins font-bold text-white text-balance">
                 Welcome to{" "}
-                <span className="bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent">
+                <span className="bg-gradient-to-r from-blue-400 to-emerald-400 bg-clip-text text-transparent">
                   OpenSport
                 </span>
               </h1>
-              <p className="text-xl md:text-2xl text-muted-foreground font-light text-balance max-w-2xl mx-auto">
+              <p className="text-xl md:text-2xl text-slate-300 font-light text-balance max-w-2xl mx-auto">
                 Showcase. Get Scouted. Get Funded.
               </p>
-              <p className="text-lg text-muted-foreground max-w-xl mx-auto text-balance">
+              <p className="text-lg text-slate-400 max-w-xl mx-auto text-balance">
                 Join the premier sports community platform connecting athletes, investors, scouts, and brands.
               </p>
             </div>
           </div>
 
           {/* Role Selection Cards */}
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 max-w-5xl mx-auto">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 max-w-6xl mx-auto">
             {/* Athlete Card */}
             <div
               onClick={() => setUserType("athlete")}
-              className="group cursor-pointer bg-white rounded-2xl p-8 shadow-lg hover:shadow-2xl transition-all duration-300 hover:-translate-y-2 border border-border"
+              className="group relative cursor-pointer bg-gradient-to-br from-slate-800/80 to-slate-900/80 backdrop-blur-sm rounded-3xl p-8 shadow-xl hover:shadow-2xl hover:shadow-blue-500/20 transition-all duration-500 hover:-translate-y-3 hover:scale-105 border border-slate-600/50 hover:border-blue-400/60 overflow-hidden active:scale-95"
             >
-              <div className="space-y-4">
-                <div className="w-16 h-16 bg-gradient-to-br from-blue-500 to-blue-600 rounded-xl flex items-center justify-center mx-auto group-hover:scale-110 transition-transform duration-300">
-                  <Target className="h-8 w-8 text-white" />
+              <div className="absolute inset-0 bg-gradient-to-br from-blue-500/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+              <div className="absolute inset-0 bg-blue-500/5 opacity-0 group-hover:opacity-100 transition-opacity duration-300 animate-pulse"></div>
+
+              <div className="relative space-y-6">
+                <div className="w-20 h-20 bg-gradient-to-br from-blue-400 via-blue-500 to-blue-600 rounded-2xl flex items-center justify-center mx-auto group-hover:scale-125 group-hover:rotate-6 transition-all duration-500 shadow-lg group-hover:shadow-blue-500/50">
+                  <Target className="h-10 w-10 text-white group-hover:scale-110 transition-transform duration-300" />
                 </div>
-                <div className="space-y-2">
-                  <h3 className="text-xl font-bold text-foreground">Athlete</h3>
-                  <p className="text-sm text-muted-foreground text-balance">
+                <div className="space-y-3 text-center">
+                  <h3 className="text-2xl font-bold text-white group-hover:text-blue-300 transition-colors duration-300">
+                    Athlete
+                  </h3>
+                  <p className="text-sm text-slate-300 group-hover:text-slate-200 text-balance transition-colors duration-300">
                     Showcase your skills, complete challenges, and get discovered by scouts and investors.
                   </p>
                 </div>
+                <div className="absolute bottom-0 left-0 right-0 h-1 bg-gradient-to-r from-transparent via-blue-500 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
               </div>
             </div>
 
             {/* Investor Card */}
             <div
               onClick={() => setUserType("investor")}
-              className="group cursor-pointer bg-white rounded-2xl p-8 shadow-lg hover:shadow-2xl transition-all duration-300 hover:-translate-y-2 border border-border"
+              className="group relative cursor-pointer bg-gradient-to-br from-slate-800/80 to-slate-900/80 backdrop-blur-sm rounded-3xl p-8 shadow-xl hover:shadow-2xl hover:shadow-emerald-500/20 transition-all duration-500 hover:-translate-y-3 hover:scale-105 border border-slate-600/50 hover:border-emerald-400/60 overflow-hidden active:scale-95"
             >
-              <div className="space-y-4">
-                <div className="w-16 h-16 bg-gradient-to-br from-primary to-secondary rounded-xl flex items-center justify-center mx-auto group-hover:scale-110 transition-transform duration-300">
-                  <TrendingUp className="h-8 w-8 text-white" />
+              <div className="absolute inset-0 bg-gradient-to-br from-emerald-500/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+              <div className="absolute inset-0 bg-emerald-500/5 opacity-0 group-hover:opacity-100 transition-opacity duration-300 animate-pulse"></div>
+
+              <div className="relative space-y-6">
+                <div className="w-20 h-20 bg-gradient-to-br from-emerald-400 via-emerald-500 to-emerald-600 rounded-2xl flex items-center justify-center mx-auto group-hover:scale-125 group-hover:rotate-6 transition-all duration-500 shadow-lg group-hover:shadow-emerald-500/50">
+                  <TrendingUp className="h-10 w-10 text-white group-hover:scale-110 transition-transform duration-300" />
                 </div>
-                <div className="space-y-2">
-                  <h3 className="text-xl font-bold text-foreground">Investor</h3>
-                  <p className="text-sm text-muted-foreground text-balance">
+                <div className="space-y-3 text-center">
+                  <h3 className="text-2xl font-bold text-white group-hover:text-emerald-300 transition-colors duration-300">
+                    Investor
+                  </h3>
+                  <p className="text-sm text-slate-300 group-hover:text-slate-200 text-balance transition-colors duration-300">
                     Discover promising talent and invest in the future of sports with transparent tracking.
                   </p>
                 </div>
+                <div className="absolute bottom-0 left-0 right-0 h-1 bg-gradient-to-r from-transparent via-emerald-500 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
               </div>
             </div>
 
             {/* Scout Card */}
             <div
               onClick={() => setUserType("investor")}
-              className="group cursor-pointer bg-white rounded-2xl p-8 shadow-lg hover:shadow-2xl transition-all duration-300 hover:-translate-y-2 border border-border"
+              className="group relative cursor-pointer bg-gradient-to-br from-slate-800/80 to-slate-900/80 backdrop-blur-sm rounded-3xl p-8 shadow-xl hover:shadow-2xl hover:shadow-purple-500/20 transition-all duration-500 hover:-translate-y-3 hover:scale-105 border border-slate-600/50 hover:border-purple-400/60 overflow-hidden active:scale-95"
             >
-              <div className="space-y-4">
-                <div className="w-16 h-16 bg-gradient-to-br from-purple-500 to-purple-600 rounded-xl flex items-center justify-center mx-auto group-hover:scale-110 transition-transform duration-300">
-                  <Search className="h-8 w-8 text-white" />
+              <div className="absolute inset-0 bg-gradient-to-br from-purple-500/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+              <div className="absolute inset-0 bg-purple-500/5 opacity-0 group-hover:opacity-100 transition-opacity duration-300 animate-pulse"></div>
+
+              <div className="relative space-y-6">
+                <div className="w-20 h-20 bg-gradient-to-br from-purple-400 via-purple-500 to-purple-600 rounded-2xl flex items-center justify-center mx-auto group-hover:scale-125 group-hover:rotate-6 transition-all duration-500 shadow-lg group-hover:shadow-purple-500/50">
+                  <Search className="h-10 w-10 text-white group-hover:scale-110 transition-transform duration-300" />
                 </div>
-                <div className="space-y-2">
-                  <h3 className="text-xl font-bold text-foreground">Scout</h3>
-                  <p className="text-sm text-muted-foreground text-balance">
+                <div className="space-y-3 text-center">
+                  <h3 className="text-2xl font-bold text-white group-hover:text-purple-300 transition-colors duration-300">
+                    Scout
+                  </h3>
+                  <p className="text-sm text-slate-300 group-hover:text-slate-200 text-balance transition-colors duration-300">
                     Find exceptional talent using advanced analytics and community validation.
                   </p>
                 </div>
+                <div className="absolute bottom-0 left-0 right-0 h-1 bg-gradient-to-r from-transparent via-purple-500 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
               </div>
             </div>
 
             {/* Brand Card */}
             <div
               onClick={() => setUserType("brands")}
-              className="group cursor-pointer bg-white rounded-2xl p-8 shadow-lg hover:shadow-2xl transition-all duration-300 hover:-translate-y-2 border border-border"
+              className="group relative cursor-pointer bg-gradient-to-br from-slate-800/80 to-slate-900/80 backdrop-blur-sm rounded-3xl p-8 shadow-xl hover:shadow-2xl hover:shadow-orange-500/20 transition-all duration-500 hover:-translate-y-3 hover:scale-105 border border-slate-600/50 hover:border-orange-400/60 overflow-hidden active:scale-95"
             >
-              <div className="space-y-4">
-                <div className="w-16 h-16 bg-gradient-to-br from-orange-500 to-orange-600 rounded-xl flex items-center justify-center mx-auto group-hover:scale-110 transition-transform duration-300">
-                  <Building2 className="h-8 w-8 text-white" />
+              <div className="absolute inset-0 bg-gradient-to-br from-orange-500/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+              <div className="absolute inset-0 bg-orange-500/5 opacity-0 group-hover:opacity-100 transition-opacity duration-300 animate-pulse"></div>
+
+              <div className="relative space-y-6">
+                <div className="w-20 h-20 bg-gradient-to-br from-orange-400 via-orange-500 to-orange-600 rounded-2xl flex items-center justify-center mx-auto group-hover:scale-125 group-hover:rotate-6 transition-all duration-500 shadow-lg group-hover:shadow-orange-500/50">
+                  <Building2 className="h-10 w-10 text-white group-hover:scale-110 transition-transform duration-300" />
                 </div>
-                <div className="space-y-2">
-                  <h3 className="text-xl font-bold text-foreground">Brand</h3>
-                  <p className="text-sm text-muted-foreground text-balance">
+                <div className="space-y-3 text-center">
+                  <h3 className="text-2xl font-bold text-white group-hover:text-orange-300 transition-colors duration-300">
+                    Brand
+                  </h3>
+                  <p className="text-sm text-slate-300 group-hover:text-slate-200 text-balance transition-colors duration-300">
                     Join our exclusive whitelist and gain access to rising sports talent.
                   </p>
                 </div>
+                <div className="absolute bottom-0 left-0 right-0 h-1 bg-gradient-to-r from-transparent via-orange-500 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
               </div>
             </div>
           </div>
@@ -1547,12 +1564,6 @@ export default function SportifyApp() {
         <div className="w-full max-w-4xl mx-auto text-center space-y-12">
           {/* Logo and Welcome Section */}
           <div className="space-y-6">
-            <div className="inline-flex items-center justify-center w-20 h-20 bg-gradient-to-br from-blue-600 to-emerald-600 rounded-2xl shadow-lg mb-6">
-              <div className="w-10 h-10 bg-slate-800 rounded-lg flex items-center justify-center">
-                <div className="w-6 h-6 bg-gradient-to-br from-blue-400 to-emerald-400 rounded-full"></div>
-              </div>
-            </div>
-
             <div className="space-y-4">
               <h1 className="text-5xl md:text-6xl font-poppins font-bold text-white text-balance">
                 Welcome to{" "}
@@ -1570,76 +1581,100 @@ export default function SportifyApp() {
           </div>
 
           {/* Role Selection Cards */}
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 max-w-5xl mx-auto">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 max-w-6xl mx-auto">
             {/* Athlete Card */}
             <div
               onClick={() => setUserType("athlete")}
-              className="group cursor-pointer bg-slate-800/50 backdrop-blur-sm rounded-2xl p-8 shadow-lg hover:shadow-2xl hover:shadow-blue-500/10 transition-all duration-300 hover:-translate-y-2 border border-slate-700 hover:border-blue-500/50"
+              className="group relative cursor-pointer bg-gradient-to-br from-slate-800/80 to-slate-900/80 backdrop-blur-sm rounded-3xl p-8 shadow-xl hover:shadow-2xl hover:shadow-blue-500/20 transition-all duration-500 hover:-translate-y-3 hover:scale-105 border border-slate-600/50 hover:border-blue-400/60 overflow-hidden active:scale-95"
             >
-              <div className="space-y-4">
-                <div className="w-16 h-16 bg-gradient-to-br from-blue-500 to-blue-600 rounded-xl flex items-center justify-center mx-auto group-hover:scale-110 transition-transform duration-300">
-                  <Target className="h-8 w-8 text-white" />
+              <div className="absolute inset-0 bg-gradient-to-br from-blue-500/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+              <div className="absolute inset-0 bg-blue-500/5 opacity-0 group-hover:opacity-100 transition-opacity duration-300 animate-pulse"></div>
+
+              <div className="relative space-y-6">
+                <div className="w-20 h-20 bg-gradient-to-br from-blue-400 via-blue-500 to-blue-600 rounded-2xl flex items-center justify-center mx-auto group-hover:scale-125 group-hover:rotate-6 transition-all duration-500 shadow-lg group-hover:shadow-blue-500/50">
+                  <Target className="h-10 w-10 text-white group-hover:scale-110 transition-transform duration-300" />
                 </div>
-                <div className="space-y-2">
-                  <h3 className="text-xl font-bold text-white">Athlete</h3>
-                  <p className="text-sm text-slate-400 text-balance">
+                <div className="space-y-3 text-center">
+                  <h3 className="text-2xl font-bold text-white group-hover:text-blue-300 transition-colors duration-300">
+                    Athlete
+                  </h3>
+                  <p className="text-sm text-slate-300 group-hover:text-slate-200 text-balance transition-colors duration-300">
                     Showcase your skills, complete challenges, and get discovered by scouts and investors.
                   </p>
                 </div>
+                <div className="absolute bottom-0 left-0 right-0 h-1 bg-gradient-to-r from-transparent via-blue-500 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
               </div>
             </div>
 
             {/* Investor Card */}
             <div
               onClick={() => setUserType("investor")}
-              className="group cursor-pointer bg-slate-800/50 backdrop-blur-sm rounded-2xl p-8 shadow-lg hover:shadow-2xl hover:shadow-emerald-500/10 transition-all duration-300 hover:-translate-y-2 border border-slate-700 hover:border-emerald-500/50"
+              className="group relative cursor-pointer bg-gradient-to-br from-slate-800/80 to-slate-900/80 backdrop-blur-sm rounded-3xl p-8 shadow-xl hover:shadow-2xl hover:shadow-emerald-500/20 transition-all duration-500 hover:-translate-y-3 hover:scale-105 border border-slate-600/50 hover:border-emerald-400/60 overflow-hidden active:scale-95"
             >
-              <div className="space-y-4">
-                <div className="w-16 h-16 bg-gradient-to-br from-emerald-500 to-emerald-600 rounded-xl flex items-center justify-center mx-auto group-hover:scale-110 transition-transform duration-300">
-                  <TrendingUp className="h-8 w-8 text-white" />
+              <div className="absolute inset-0 bg-gradient-to-br from-emerald-500/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+              <div className="absolute inset-0 bg-emerald-500/5 opacity-0 group-hover:opacity-100 transition-opacity duration-300 animate-pulse"></div>
+
+              <div className="relative space-y-6">
+                <div className="w-20 h-20 bg-gradient-to-br from-emerald-400 via-emerald-500 to-emerald-600 rounded-2xl flex items-center justify-center mx-auto group-hover:scale-125 group-hover:rotate-6 transition-all duration-500 shadow-lg group-hover:shadow-emerald-500/50">
+                  <TrendingUp className="h-10 w-10 text-white group-hover:scale-110 transition-transform duration-300" />
                 </div>
-                <div className="space-y-2">
-                  <h3 className="text-xl font-bold text-white">Investor</h3>
-                  <p className="text-sm text-slate-400 text-balance">
+                <div className="space-y-3 text-center">
+                  <h3 className="text-2xl font-bold text-white group-hover:text-emerald-300 transition-colors duration-300">
+                    Investor
+                  </h3>
+                  <p className="text-sm text-slate-300 group-hover:text-slate-200 text-balance transition-colors duration-300">
                     Discover promising talent and invest in the future of sports with transparent tracking.
                   </p>
                 </div>
+                <div className="absolute bottom-0 left-0 right-0 h-1 bg-gradient-to-r from-transparent via-emerald-500 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
               </div>
             </div>
 
             {/* Scout Card */}
             <div
               onClick={() => setUserType("investor")}
-              className="group cursor-pointer bg-slate-800/50 backdrop-blur-sm rounded-2xl p-8 shadow-lg hover:shadow-2xl hover:shadow-purple-500/10 transition-all duration-300 hover:-translate-y-2 border border-slate-700 hover:border-purple-500/50"
+              className="group relative cursor-pointer bg-gradient-to-br from-slate-800/80 to-slate-900/80 backdrop-blur-sm rounded-3xl p-8 shadow-xl hover:shadow-2xl hover:shadow-purple-500/20 transition-all duration-500 hover:-translate-y-3 hover:scale-105 border border-slate-600/50 hover:border-purple-400/60 overflow-hidden active:scale-95"
             >
-              <div className="space-y-4">
-                <div className="w-16 h-16 bg-gradient-to-br from-purple-500 to-purple-600 rounded-xl flex items-center justify-center mx-auto group-hover:scale-110 transition-transform duration-300">
-                  <Search className="h-8 w-8 text-white" />
+              <div className="absolute inset-0 bg-gradient-to-br from-purple-500/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+              <div className="absolute inset-0 bg-purple-500/5 opacity-0 group-hover:opacity-100 transition-opacity duration-300 animate-pulse"></div>
+
+              <div className="relative space-y-6">
+                <div className="w-20 h-20 bg-gradient-to-br from-purple-400 via-purple-500 to-purple-600 rounded-2xl flex items-center justify-center mx-auto group-hover:scale-125 group-hover:rotate-6 transition-all duration-500 shadow-lg group-hover:shadow-purple-500/50">
+                  <Search className="h-10 w-10 text-white group-hover:scale-110 transition-transform duration-300" />
                 </div>
-                <div className="space-y-2">
-                  <h3 className="text-xl font-bold text-white">Scout</h3>
-                  <p className="text-sm text-slate-400 text-balance">
+                <div className="space-y-3 text-center">
+                  <h3 className="text-2xl font-bold text-white group-hover:text-purple-300 transition-colors duration-300">
+                    Scout
+                  </h3>
+                  <p className="text-sm text-slate-300 group-hover:text-slate-200 text-balance transition-colors duration-300">
                     Find exceptional talent using advanced analytics and community validation.
                   </p>
                 </div>
+                <div className="absolute bottom-0 left-0 right-0 h-1 bg-gradient-to-r from-transparent via-purple-500 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
               </div>
             </div>
 
             {/* Brand Card */}
             <div
               onClick={() => setUserType("brands")}
-              className="group cursor-pointer bg-slate-800/50 backdrop-blur-sm rounded-2xl p-8 shadow-lg hover:shadow-2xl hover:shadow-orange-500/10 transition-all duration-300 hover:-translate-y-2 border border-slate-700 hover:border-orange-500/50"
+              className="group relative cursor-pointer bg-gradient-to-br from-slate-800/80 to-slate-900/80 backdrop-blur-sm rounded-3xl p-8 shadow-xl hover:shadow-2xl hover:shadow-orange-500/20 transition-all duration-500 hover:-translate-y-3 hover:scale-105 border border-slate-600/50 hover:border-orange-400/60 overflow-hidden active:scale-95"
             >
-              <div className="space-y-4">
-                <div className="w-16 h-16 bg-gradient-to-br from-orange-500 to-orange-600 rounded-xl flex items-center justify-center mx-auto group-hover:scale-110 transition-transform duration-300">
-                  <Building2 className="h-8 w-8 text-white" />
+              <div className="absolute inset-0 bg-gradient-to-br from-orange-500/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+              <div className="absolute inset-0 bg-orange-500/5 opacity-0 group-hover:opacity-100 transition-opacity duration-300 animate-pulse"></div>
+
+              <div className="relative space-y-6">
+                <div className="w-20 h-20 bg-gradient-to-br from-orange-400 via-orange-500 to-orange-600 rounded-2xl flex items-center justify-center mx-auto group-hover:scale-125 group-hover:rotate-6 transition-all duration-500 shadow-lg group-hover:shadow-orange-500/50">
+                  <Building2 className="h-10 w-10 text-white group-hover:scale-110 transition-transform duration-300" />
                 </div>
-                <div className="space-y-2">
-                  <h3 className="text-xl font-bold text-white">Brand</h3>
-                  <p className="text-sm text-slate-400 text-balance">
+                <div className="space-y-3 text-center">
+                  <h3 className="text-2xl font-bold text-white group-hover:text-orange-300 transition-colors duration-300">
+                    Brand
+                  </h3>
+                  <p className="text-sm text-slate-300 group-hover:text-slate-200 text-balance transition-colors duration-300">
                     Join our exclusive whitelist and gain access to rising sports talent.
                   </p>
                 </div>
+                <div className="absolute bottom-0 left-0 right-0 h-1 bg-gradient-to-r from-transparent via-orange-500 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
               </div>
             </div>
           </div>

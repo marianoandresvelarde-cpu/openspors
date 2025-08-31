@@ -4,40 +4,40 @@
 @custom-variant dark (&:is(.dark *));
 
 :root {
-  /* Updated color tokens for beautiful welcome screen design */
+  /* Updated color tokens following design brief for enhanced button aesthetics */
   --background: #ffffff;
   --foreground: #475569;
-  --card: #f1f5f9;
-  --card-foreground: #059669;
+  --card: #fdf2f8;
+  --card-foreground: #475569;
   --popover: #ffffff;
   --popover-foreground: #475569;
-  --primary: #059669;
+  --primary: #be123c; /* for buttons */
   --primary-foreground: #ffffff;
-  --secondary: #10b981;
-  --secondary-foreground: #ffffff;
-  --muted: #f1f5f9;
+  --secondary: #f9fafb;
+  --secondary-foreground: #475569;
+  --muted: #ecfeff;
   --muted-foreground: #475569;
-  --accent: #10b981;
+  --accent: #ec4899; /* for active state */
   --accent-foreground: #ffffff;
-  --destructive: #be123c;
+  --destructive: #e3342f;
   --destructive-foreground: #ffffff;
-  --border: #e5e7eb;
-  --input: #f1f5f9;
-  --ring: rgba(5, 150, 105, 0.5);
-  --chart-1: #059669;
-  --chart-2: #10b981;
-  --chart-3: #ec4899;
-  --chart-4: #be123c;
-  --chart-5: #475569;
-  --radius: 0.5rem;
-  --sidebar: #f1f5f9;
+  --border: #e2e8f0;
+  --input: #ffffff;
+  --ring: #ec4899; /* for focus state */
+  --chart-1: #f9fafb;
+  --chart-2: #e5e7eb;
+  --chart-3: #d1fae5;
+  --chart-4: #cbd5e1;
+  --chart-5: #fefcbf;
+  --radius: 0.5rem; /* for button corners */
+  --sidebar: #ffffff;
   --sidebar-foreground: #475569;
-  --sidebar-primary: #059669;
+  --sidebar-primary: #be123c;
   --sidebar-primary-foreground: #ffffff;
-  --sidebar-accent: #10b981;
+  --sidebar-accent: #ec4899;
   --sidebar-accent-foreground: #ffffff;
-  --sidebar-border: #e5e7eb;
-  --sidebar-ring: rgba(5, 150, 105, 0.5);
+  --sidebar-border: #e2e8f0;
+  --sidebar-ring: #ec4899;
 }
 
 .dark {
