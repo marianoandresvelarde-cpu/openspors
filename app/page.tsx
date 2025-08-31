@@ -669,7 +669,7 @@ export default function SportifyApp() {
 
       const result = await footballTokenAPI.deployContract({
         playerWallet: walletState.address || `0x${athlete.id.toString().padStart(40, "0")}`, // Use connected wallet or mock
-        platformWallet: "0x8ba1f109551bD432803012645Hac136c777CC5e", // Platform wallet
+        platformWallet: "0x8ba1f109551bD432803012645cac136c777CC5e", // Platform wallet
         name: `${athlete.name} Token`,
         symbol: athlete.name
           .split(" ")
@@ -1406,8 +1406,8 @@ export default function SportifyApp() {
           </div>
 
           {/* Footer */}
-          <div className="pt-8 border-t border-border">
-            <p className="text-sm text-muted-foreground">
+          <div className="pt-8 border-t border-slate-700">
+            <p className="text-sm text-slate-400">
               Powered by blockchain technology for transparent and secure transactions
             </p>
           </div>
@@ -1558,135 +1558,20 @@ export default function SportifyApp() {
     )
   }
 
-  if (userType === null || userType === "selection") {
+  if (userType === "athlete") {
     return (
-      <div className="min-h-screen bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900 flex items-center justify-center p-4">
-        <div className="w-full max-w-4xl mx-auto text-center space-y-12">
-          {/* Logo and Welcome Section */}
-          <div className="space-y-6">
-            <div className="space-y-4">
-              <h1 className="text-5xl md:text-6xl font-poppins font-bold text-white text-balance">
-                Welcome to{" "}
-                <span className="bg-gradient-to-r from-blue-400 to-emerald-400 bg-clip-text text-transparent">
-                  OpenSport
-                </span>
-              </h1>
-              <p className="text-xl md:text-2xl text-slate-300 font-light text-balance max-w-2xl mx-auto">
-                Showcase. Get Scouted. Get Funded.
-              </p>
-              <p className="text-lg text-slate-400 max-w-xl mx-auto text-balance">
-                Join the premier sports community platform connecting athletes, investors, scouts, and brands.
-              </p>
-            </div>
-          </div>
-
-          {/* Role Selection Cards */}
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 max-w-6xl mx-auto">
-            {/* Athlete Card */}
-            <div
-              onClick={() => setUserType("athlete")}
-              className="group relative cursor-pointer bg-gradient-to-br from-slate-800/80 to-slate-900/80 backdrop-blur-sm rounded-3xl p-8 shadow-xl hover:shadow-2xl hover:shadow-blue-500/20 transition-all duration-500 hover:-translate-y-3 hover:scale-105 border border-slate-600/50 hover:border-blue-400/60 overflow-hidden active:scale-95"
-            >
-              <div className="absolute inset-0 bg-gradient-to-br from-blue-500/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
-              <div className="absolute inset-0 bg-blue-500/5 opacity-0 group-hover:opacity-100 transition-opacity duration-300 animate-pulse"></div>
-
-              <div className="relative space-y-6">
-                <div className="w-20 h-20 bg-gradient-to-br from-blue-400 via-blue-500 to-blue-600 rounded-2xl flex items-center justify-center mx-auto group-hover:scale-125 group-hover:rotate-6 transition-all duration-500 shadow-lg group-hover:shadow-blue-500/50">
-                  <Target className="h-10 w-10 text-white group-hover:scale-110 transition-transform duration-300" />
-                </div>
-                <div className="space-y-3 text-center">
-                  <h3 className="text-2xl font-bold text-white group-hover:text-blue-300 transition-colors duration-300">
-                    Athlete
-                  </h3>
-                  <p className="text-sm text-slate-300 group-hover:text-slate-200 text-balance transition-colors duration-300">
-                    Showcase your skills, complete challenges, and get discovered by scouts and investors.
-                  </p>
-                </div>
-                <div className="absolute bottom-0 left-0 right-0 h-1 bg-gradient-to-r from-transparent via-blue-500 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
-              </div>
-            </div>
-
-            {/* Investor Card */}
-            <div
-              onClick={() => setUserType("investor")}
-              className="group relative cursor-pointer bg-gradient-to-br from-slate-800/80 to-slate-900/80 backdrop-blur-sm rounded-3xl p-8 shadow-xl hover:shadow-2xl hover:shadow-emerald-500/20 transition-all duration-500 hover:-translate-y-3 hover:scale-105 border border-slate-600/50 hover:border-emerald-400/60 overflow-hidden active:scale-95"
-            >
-              <div className="absolute inset-0 bg-gradient-to-br from-emerald-500/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
-              <div className="absolute inset-0 bg-emerald-500/5 opacity-0 group-hover:opacity-100 transition-opacity duration-300 animate-pulse"></div>
-
-              <div className="relative space-y-6">
-                <div className="w-20 h-20 bg-gradient-to-br from-emerald-400 via-emerald-500 to-emerald-600 rounded-2xl flex items-center justify-center mx-auto group-hover:scale-125 group-hover:rotate-6 transition-all duration-500 shadow-lg group-hover:shadow-emerald-500/50">
-                  <TrendingUp className="h-10 w-10 text-white group-hover:scale-110 transition-transform duration-300" />
-                </div>
-                <div className="space-y-3 text-center">
-                  <h3 className="text-2xl font-bold text-white group-hover:text-emerald-300 transition-colors duration-300">
-                    Investor
-                  </h3>
-                  <p className="text-sm text-slate-300 group-hover:text-slate-200 text-balance transition-colors duration-300">
-                    Discover promising talent and invest in the future of sports with transparent tracking.
-                  </p>
-                </div>
-                <div className="absolute bottom-0 left-0 right-0 h-1 bg-gradient-to-r from-transparent via-emerald-500 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
-              </div>
-            </div>
-
-            {/* Scout Card */}
-            <div
-              onClick={() => setUserType("investor")}
-              className="group relative cursor-pointer bg-gradient-to-br from-slate-800/80 to-slate-900/80 backdrop-blur-sm rounded-3xl p-8 shadow-xl hover:shadow-2xl hover:shadow-purple-500/20 transition-all duration-500 hover:-translate-y-3 hover:scale-105 border border-slate-600/50 hover:border-purple-400/60 overflow-hidden active:scale-95"
-            >
-              <div className="absolute inset-0 bg-gradient-to-br from-purple-500/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
-              <div className="absolute inset-0 bg-purple-500/5 opacity-0 group-hover:opacity-100 transition-opacity duration-300 animate-pulse"></div>
-
-              <div className="relative space-y-6">
-                <div className="w-20 h-20 bg-gradient-to-br from-purple-400 via-purple-500 to-purple-600 rounded-2xl flex items-center justify-center mx-auto group-hover:scale-125 group-hover:rotate-6 transition-all duration-500 shadow-lg group-hover:shadow-purple-500/50">
-                  <Search className="h-10 w-10 text-white group-hover:scale-110 transition-transform duration-300" />
-                </div>
-                <div className="space-y-3 text-center">
-                  <h3 className="text-2xl font-bold text-white group-hover:text-purple-300 transition-colors duration-300">
-                    Scout
-                  </h3>
-                  <p className="text-sm text-slate-300 group-hover:text-slate-200 text-balance transition-colors duration-300">
-                    Find exceptional talent using advanced analytics and community validation.
-                  </p>
-                </div>
-                <div className="absolute bottom-0 left-0 right-0 h-1 bg-gradient-to-r from-transparent via-purple-500 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
-              </div>
-            </div>
-
-            {/* Brand Card */}
-            <div
-              onClick={() => setUserType("brands")}
-              className="group relative cursor-pointer bg-gradient-to-br from-slate-800/80 to-slate-900/80 backdrop-blur-sm rounded-3xl p-8 shadow-xl hover:shadow-2xl hover:shadow-orange-500/20 transition-all duration-500 hover:-translate-y-3 hover:scale-105 border border-slate-600/50 hover:border-orange-400/60 overflow-hidden active:scale-95"
-            >
-              <div className="absolute inset-0 bg-gradient-to-br from-orange-500/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
-              <div className="absolute inset-0 bg-orange-500/5 opacity-0 group-hover:opacity-100 transition-opacity duration-300 animate-pulse"></div>
-
-              <div className="relative space-y-6">
-                <div className="w-20 h-20 bg-gradient-to-br from-orange-400 via-orange-500 to-orange-600 rounded-2xl flex items-center justify-center mx-auto group-hover:scale-125 group-hover:rotate-6 transition-all duration-500 shadow-lg group-hover:shadow-orange-500/50">
-                  <Building2 className="h-10 w-10 text-white group-hover:scale-110 transition-transform duration-300" />
-                </div>
-                <div className="space-y-3 text-center">
-                  <h3 className="text-2xl font-bold text-white group-hover:text-orange-300 transition-colors duration-300">
-                    Brand
-                  </h3>
-                  <p className="text-sm text-slate-300 group-hover:text-slate-200 text-balance transition-colors duration-300">
-                    Join our exclusive whitelist and gain access to rising sports talent.
-                  </p>
-                </div>
-                <div className="absolute bottom-0 left-0 right-0 h-1 bg-gradient-to-r from-transparent via-orange-500 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
-              </div>
-            </div>
-          </div>
-
-          {/* Footer */}
-          <div className="pt-8 border-t border-slate-700">
-            <p className="text-sm text-slate-400">
-              Powered by blockchain technology for transparent and secure transactions
-            </p>
-          </div>
-        </div>
-      </div>
+      <AthleteDashboard
+        challenges={challenges}
+        athleteProfile={athleteProfile}
+        skillCategories={skillCategories}
+        activeTab={activeTab}
+        setActiveTab={setActiveTab}
+        showChallengeModal={showChallengeModal}
+        setShowChallengeModal={setShowChallengeModal}
+        selectedChallenge={selectedChallenge}
+        setSelectedChallenge={setSelectedChallenge}
+        setUserType={setUserType}
+      />
     )
   }
 
@@ -1698,416 +1583,341 @@ export default function SportifyApp() {
     return <BrandsPartnerDashboard setUserType={setUserType} />
   }
 
+  return <UserTypeSelection />
+}
+
+const AthleteDashboard = ({
+  challenges,
+  athleteProfile,
+  skillCategories,
+  activeTab,
+  setActiveTab,
+  showChallengeModal,
+  setShowChallengeModal,
+  selectedChallenge,
+  setSelectedChallenge,
+  setUserType,
+}: {
+  challenges: any[]
+  athleteProfile: any
+  skillCategories: any[]
+  activeTab: string
+  setActiveTab: (tab: string) => void
+  showChallengeModal: number | null
+  setShowChallengeModal: (challengeId: number | null) => void
+  selectedChallenge: any
+  setSelectedChallenge: (challenge: any) => void
+  setUserType: (type: "selection" | "athlete" | "investor" | "brands" | null) => void
+}) => {
+  const ChallengeModal = ({
+    challenge,
+    setShowChallengeModal,
+  }: { challenge: any; setShowChallengeModal: (id: number | null) => void }) => {
+    const [youtubeUrl, setYoutubeUrl] = useState("")
+    const [uploading, setUploading] = useState(false)
+    const [success, setSuccess] = useState(false)
+
+    const handleUploadVideo = async () => {
+      setUploading(true)
+      // Simulate upload process
+      await new Promise((resolve) => setTimeout(resolve, 2000))
+      setUploading(false)
+      setSuccess(true)
+    }
+
+    return (
+      <div className="fixed inset-0 bg-black/60 backdrop-blur-sm flex items-center justify-center p-4 z-50">
+        <Card className="w-full max-w-md bg-slate-800 border-slate-700">
+          <CardHeader className="pb-4">
+            <div className="flex items-center justify-between">
+              <CardTitle className="text-xl text-white">{challenge.title}</CardTitle>
+              <Button
+                variant="ghost"
+                size="sm"
+                onClick={() => setShowChallengeModal(null)}
+                className="text-slate-400 hover:text-white"
+              >
+                <ArrowLeft className="h-4 w-4" />
+              </Button>
+            </div>
+            <CardDescription className="text-slate-400">{challenge.description}</CardDescription>
+          </CardHeader>
+          <CardContent className="space-y-6">
+            <div className="space-y-4">
+              <div className="aspect-video bg-slate-900 rounded-lg overflow-hidden">
+                <iframe
+                  src={challenge.videoUrl}
+                  title={challenge.title}
+                  className="w-full h-full"
+                  frameBorder="0"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                  allowFullScreen
+                />
+              </div>
+
+              <div className="space-y-2">
+                <h4 className="text-sm font-semibold text-slate-300">Criteria</h4>
+                <ul className="list-none pl-0 space-y-1">
+                  {challenge.criteria.map((criterion) => (
+                    <li
+                      key={criterion.name}
+                      className="flex items-center justify-between p-3 bg-slate-700/30 rounded-lg"
+                    >
+                      <span className="text-sm text-slate-300">{criterion.name}</span>
+                      <span className="text-xs text-slate-400">{criterion.weight}%</span>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+
+              <div className="space-y-3">
+                <Label className="text-sm font-medium text-slate-300 mb-2 block">Upload Your Video</Label>
+                <div className="relative">
+                  <Input
+                    type="text"
+                    placeholder="Paste YouTube URL"
+                    value={youtubeUrl}
+                    onChange={(e) => setYoutubeUrl(e.target.value)}
+                    className="bg-slate-700/50 border-slate-600 text-slate-300 placeholder:text-slate-500"
+                  />
+                  <div className="absolute inset-y-0 right-0 pr-3 flex items-center pointer-events-none">
+                    <Search className="h-4 w-4 text-slate-500" />
+                  </div>
+                </div>
+                <Button
+                  className="w-full bg-blue-600 hover:bg-blue-700 text-white relative"
+                  disabled={uploading || success}
+                  onClick={handleUploadVideo}
+                >
+                  {uploading ? (
+                    <>Uploading...</>
+                  ) : success ? (
+                    <>
+                      Uploaded <CheckCircle className="h-4 w-4 ml-2" />
+                    </>
+                  ) : (
+                    <>
+                      Upload Video <Upload className="h-4 w-4 ml-2" />
+                    </>
+                  )}
+                </Button>
+              </div>
+            </div>
+          </CardContent>
+        </Card>
+      </div>
+    )
+  }
+
   return (
     <div className="min-h-screen bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900 text-white">
-      <header className="sticky top-0 z-50 bg-slate-800/80 backdrop-blur-md border-b border-slate-700">
+      <header className="sticky top-0 z-40 bg-slate-800/80 backdrop-blur-md border-b border-slate-700">
         <div className="flex items-center justify-between p-4">
-          <div className="flex items-center gap-2">
-            <h1 className="text-xl font-bold bg-gradient-to-r from-blue-400 to-emerald-400 bg-clip-text text-transparent font-poppins">
+          <div className="flex items-center gap-3">
+            <h1 className="text-2xl font-poppins font-bold bg-gradient-to-r from-blue-400 to-emerald-400 bg-clip-text text-transparent">
               OpenSport
             </h1>
           </div>
-          <div className="flex items-center gap-2">
+          <div className="flex items-center gap-3">
             <Button
               variant="ghost"
               size="sm"
               onClick={() => setUserType("selection")}
-              className="text-slate-300 hover:text-white hover:bg-slate-700 text-sm px-3 py-1.5"
+              className="text-slate-400 hover:text-white"
             >
-              Switch Role
-            </Button>
-            <Button variant="ghost" size="sm" className="text-slate-300 hover:text-white hover:bg-slate-700">
-              <Target className="h-4 w-4" />
-            </Button>
-            <Button variant="ghost" size="sm" className="text-slate-300 hover:text-white hover:bg-slate-700">
-              <Users className="h-4 w-4" />
+              <ArrowLeft className="h-4 w-4" />
             </Button>
           </div>
         </div>
       </header>
 
-      <main className="pb-20">
-        <Tabs value={activeTab} onValueChange={setActiveTab} className="w-full">
-          <TabsList className="grid w-full grid-cols-3 bg-slate-800/50 border-slate-700 backdrop-blur-sm">
-            <TabsTrigger
-              value="profile"
-              className="text-slate-400 data-[state=active]:text-emerald-400 data-[state=active]:bg-slate-700/50"
-            >
-              Profile
-            </TabsTrigger>
-            <TabsTrigger
-              value="challenges"
-              className="text-slate-400 data-[state=active]:text-emerald-400 data-[state=active]:bg-slate-700/50"
-            >
-              Challenges
-            </TabsTrigger>
-            <TabsTrigger
-              value="community"
-              className="text-slate-400 data-[state=active]:text-emerald-400 data-[state=active]:bg-slate-700/50"
-            >
-              Community
-            </TabsTrigger>
-          </TabsList>
+      <main className="p-4 space-y-6">
+        <div className="flex items-center justify-between">
+          <div>
+            <h2 className="text-2xl font-bold text-balance text-white">Panel de Atleta</h2>
+            <p className="text-slate-400">Sube videos • Completa retos • Obtén inversión</p>
+          </div>
+          <Badge className="bg-blue-500/20 text-blue-400 border-blue-500/30 px-3 py-1">Atleta</Badge>
+        </div>
 
-          <TabsContent value="profile" className="p-4 space-y-6">
-            <Card className="bg-slate-800/50 border-slate-700 backdrop-blur-sm">
-              <CardContent className="p-6">
-                <div className="flex items-center gap-4 mb-6">
-                  <div className="relative">
-                    <img
-                      src={athleteProfile.avatar || "/placeholder.svg"}
-                      alt={athleteProfile.name}
-                      className="w-20 h-20 rounded-full object-cover border-2 border-blue-500"
-                    />
-                    <Badge className="absolute -bottom-1 -right-1 bg-blue-500 text-white text-xs px-2 py-1">ST</Badge>
-                  </div>
-                  <div className="flex-1">
-                    <h1 className="text-2xl font-bold text-white">{athleteProfile.name}</h1>
-                    <p className="text-slate-400">{athleteProfile.position}</p>
-                    <Badge className="mt-2 bg-emerald-500/20 text-emerald-400 border-emerald-500/30">
-                      SENART MOISSY
-                    </Badge>
-                  </div>
-                </div>
-
-                <div className="grid grid-cols-3 gap-4 mb-6">
-                  <div className="text-center">
-                    <div className="w-16 h-16 mx-auto mb-2 relative">
-                      <div className="w-full h-full rounded-full border-4 border-slate-700 flex items-center justify-center">
-                        <span className="text-xl font-bold text-white">{athleteProfile.stats.matches}</span>
-                      </div>
-                    </div>
-                    <div className="text-sm text-slate-300 font-medium">Matches</div>
-                  </div>
-                  <div className="text-center">
-                    <div className="w-16 h-16 mx-auto mb-2 relative">
-                      <div className="w-full h-full rounded-full border-4 border-yellow-500 flex items-center justify-center">
-                        <span className="text-xl font-bold text-white">{athleteProfile.stats.votes}</span>
-                      </div>
-                    </div>
-                    <div className="text-sm text-slate-300 font-medium">Votes</div>
-                  </div>
-                  <div className="text-center">
-                    <div className="w-16 h-16 mx-auto mb-2 relative">
-                      <div className="w-full h-full rounded-full border-4 border-emerald-500 flex items-center justify-center">
-                        <span className="text-xl font-bold text-white">{athleteProfile.stats.goalsAssists}</span>
-                      </div>
-                    </div>
-                    <div className="text-sm text-slate-300 font-medium">Goals & Assists</div>
-                  </div>
-                </div>
-
-                <div className="flex justify-center mb-6">
-                  <div className="w-24 h-24 relative">
-                    <div className="w-full h-full rounded-full border-4 border-yellow-500 flex items-center justify-center bg-slate-800">
-                      <span className="text-2xl font-bold text-white">{athleteProfile.stats.rating}</span>
-                    </div>
-                  </div>
-                </div>
-
-                <div className="grid grid-cols-3 gap-4 text-center">
-                  <div>
-                    <div className="text-2xl font-bold text-white">{athleteProfile.followers}</div>
-                    <div className="text-xs text-slate-400 uppercase tracking-wide">Followers</div>
-                  </div>
-                  <div>
-                    <div className="text-2xl font-bold text-white">{athleteProfile.profileViews}</div>
-                    <div className="text-xs text-slate-400 uppercase tracking-wide">Profile Views</div>
-                  </div>
-                  <div>
-                    <div className="text-2xl font-bold text-white">{athleteProfile.following}</div>
-                    <div className="text-xs text-slate-400 uppercase tracking-wide">Following</div>
-                  </div>
-                </div>
-              </CardContent>
-            </Card>
-
-            <Card className="bg-slate-800/50 border-slate-700 backdrop-blur-sm">
-              <CardHeader>
+        <Card className="bg-slate-800/50 border-slate-700 backdrop-blur-sm">
+          <CardContent className="p-0">
+            <div className="md:flex items-start gap-6 p-6">
+              <Avatar className="h-32 w-32 border-2 border-blue-500/30">
+                <AvatarImage src={athleteProfile.avatar || "/placeholder.svg"} />
+                <AvatarFallback className="bg-slate-700 text-white">
+                  {athleteProfile.name
+                    .split(" ")
+                    .map((n) => n[0])
+                    .join("")}
+                </AvatarFallback>
+              </Avatar>
+              <div className="flex-1 space-y-3">
                 <div className="flex items-center justify-between">
-                  <CardTitle className="text-xl text-white">Highlighted skills</CardTitle>
-                  <Button
-                    variant="outline"
-                    size="sm"
-                    className="border-slate-600 text-slate-400 hover:bg-slate-700 hover:text-white bg-transparent"
-                  >
-                    VIEW MORE
-                  </Button>
-                </div>
-              </CardHeader>
-              <CardContent>
-                <div className="grid grid-cols-2 gap-4">
-                  <div className="relative aspect-video bg-slate-700 rounded-lg overflow-hidden">
-                    <iframe
-                      src="https://www.youtube.com/embed/kne4nXTBzWs"
-                      title="Skill Video 1"
-                      className="w-full h-full"
-                      frameBorder="0"
-                      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                      allowFullScreen
-                    />
-                  </div>
-                  <div className="relative aspect-video bg-slate-700 rounded-lg overflow-hidden">
-                    <iframe
-                      src="https://www.youtube.com/embed/IoA0YaCA2Yk"
-                      title="Skill Video 2"
-                      className="w-full h-full"
-                      frameBorder="0"
-                      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                      allowFullScreen
-                    />
+                  <h3 className="text-xl font-semibold text-white">{athleteProfile.name}</h3>
+                  <div className="flex items-center gap-2">
+                    <Star className="h-4 w-4 text-yellow-400 fill-current" />
+                    <span className="font-semibold text-white">{athleteProfile.stats.rating}</span>
                   </div>
                 </div>
-              </CardContent>
-            </Card>
-
-            <Card className="bg-slate-800/50 border-slate-700 backdrop-blur-sm">
-              <CardHeader>
-                <CardTitle className="text-xl text-white flex items-center gap-2">
-                  <Target className="h-5 w-5 text-blue-400" />
-                  Professional Development Plan
-                </CardTitle>
-                <p className="text-sm text-slate-400">
-                  Expert-designed plan optimized with AI according to your context
-                </p>
-              </CardHeader>
-              <CardContent className="space-y-6">
-                <div className="space-y-3">
-                  <h4 className="text-sm font-semibold text-slate-300 flex items-center gap-2">
-                    <div className="w-2 h-2 bg-emerald-400 rounded-full"></div>
-                    Nutrición y Alimentación
-                  </h4>
-                  <div className="bg-slate-700/30 rounded-lg p-4 space-y-2">
-                    <div className="flex justify-between items-center">
-                      <span className="text-sm text-slate-300">Plan Actual:</span>
-                      <span className="text-sm text-slate-400">
-                        {athleteProfile.careerObjectives.nutrition.currentPlan}
-                      </span>
-                    </div>
-                    <div className="flex justify-between items-center">
-                      <span className="text-sm text-slate-300">Plan Recomendado:</span>
-                      <span className="text-sm text-blue-400 font-medium">
-                        {athleteProfile.careerObjectives.nutrition.recommendedPlan}
-                      </span>
-                    </div>
-                    <p className="text-xs text-slate-400 mt-2">
-                      {athleteProfile.careerObjectives.nutrition.description}
-                    </p>
-                    <div className="flex justify-between items-center mt-3 pt-2 border-t border-slate-600">
-                      <span className="text-sm text-slate-300">Costo mensual:</span>
-                      <span className="text-sm font-semibold text-emerald-400">
-                        ${athleteProfile.careerObjectives.nutrition.cost}
-                      </span>
-                    </div>
+                <div className="flex items-center gap-2 text-sm text-slate-400">
+                  <Badge className="bg-blue-500/20 text-blue-400 border-blue-500/30 text-xs px-2 py-0.5">
+                    {athleteProfile.sport}
+                  </Badge>
+                  <span>•</span>
+                  <span>{athleteProfile.position}</span>
+                </div>
+                <div className="flex items-center gap-4">
+                  <div className="flex items-center gap-1">
+                    <Users className="h-4 w-4 text-slate-400" />
+                    <span className="text-sm text-slate-400">{athleteProfile.followers} Followers</span>
+                  </div>
+                  <div className="flex items-center gap-1">
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      viewBox="0 0 24 24"
+                      fill="currentColor"
+                      className="w-4 h-4 text-slate-400"
+                    >
+                      <path
+                        fillRule="evenodd"
+                        d="M12 2.25c-5.385 0-9.75 4.365-9.75 9.75s4.365 9.75 9.75 9.75 9.75-4.365 9.75-9.75S17.385 2.25 12 2.25Zm-2.625 6c-.548 0-1.05.216-1.425.585a3.01 3.01 0 0 0 0 4.242l1.425 1.415c.429.428 1.128.428 1.557 0l1.425-1.415a3.01 3.01 0 0 0 0-4.242 2.984 2.984 0 0 0-4.242 0Zm5.25 0c-.548 0-1.05.216-1.425.585a3.01 3.01 0 0 0 0 4.242l1.425 1.415c.429.428 1.128.428 1.557 0l1.425-1.415a3.01 3.01 0 0 0 0-4.242 2.984 2.984 0 0 0-4.242 0Z"
+                        clipRule="evenodd"
+                      />
+                    </svg>
+                    <span className="text-sm text-slate-400">{athleteProfile.profileViews} Profile Views</span>
                   </div>
                 </div>
-
-                <div className="space-y-3">
-                  <h4 className="text-sm font-semibold text-slate-300 flex items-center gap-2">
-                    <div className="w-2 h-2 bg-blue-400 rounded-full"></div>
-                    Entrenamiento y Coaching
-                  </h4>
-                  <div className="bg-slate-700/30 rounded-lg p-4 space-y-2">
-                    <div className="flex justify-between items-center">
-                      <span className="text-sm text-slate-300">Entrenamiento Actual:</span>
-                      <span className="text-sm text-slate-400">
-                        {athleteProfile.careerObjectives.training.currentPlan}
-                      </span>
-                    </div>
-                    <div className="flex justify-between items-center">
-                      <span className="text-sm text-slate-300">Plan Recomendado:</span>
-                      <span className="text-sm text-blue-400 font-medium">
-                        {athleteProfile.careerObjectives.training.recommendedPlan}
-                      </span>
-                    </div>
-                    <p className="text-xs text-slate-400 mt-2">
-                      {athleteProfile.careerObjectives.training.description}
-                    </p>
-                    <div className="flex justify-between items-center mt-3 pt-2 border-t border-slate-600">
-                      <span className="text-sm text-slate-300">Costo mensual:</span>
-                      <span className="text-sm font-semibold text-emerald-400">
-                        ${athleteProfile.careerObjectives.training.cost}
-                      </span>
-                    </div>
-                  </div>
-                </div>
-
-                <div className="space-y-3">
-                  <h4 className="text-sm font-semibold text-slate-300 flex items-center gap-2">
-                    <div className="w-2 h-2 bg-purple-400 rounded-full"></div>
-                    Equipamiento Necesario
-                  </h4>
-                  <div className="space-y-2">
-                    {athleteProfile.careerObjectives.equipment.items.map((item, index) => (
-                      <div key={index} className="bg-slate-700/30 rounded-lg p-3 flex justify-between items-center">
-                        <div className="flex-1">
-                          <span className="text-sm text-slate-300">{item.name}</span>
-                          <Badge
-                            className={`ml-2 text-xs ${
-                              item.priority === "High"
-                                ? "bg-red-500/20 text-red-400 border-red-500/30"
-                                : "bg-yellow-500/20 text-yellow-400 border-yellow-500/30"
-                            }`}
-                          >
-                            {item.priority}
-                          </Badge>
-                        </div>
-                        <span className="text-sm font-semibold text-emerald-400">${item.cost}</span>
-                      </div>
-                    ))}
-                  </div>
-                </div>
-
-                <div className="space-y-3">
-                  <h4 className="text-sm font-semibold text-slate-300 flex items-center gap-2">
-                    <div className="w-2 h-2 bg-yellow-400 rounded-full"></div>
-                    Competencias Próximas
-                  </h4>
-                  <div className="space-y-2">
-                    {athleteProfile.careerObjectives.competitions.upcoming.map((comp, index) => (
-                      <div key={index} className="bg-slate-700/30 rounded-lg p-3 flex justify-between items-center">
-                        <div className="flex-1">
-                          <span className="text-sm text-slate-300">{comp.name}</span>
-                          <div className="text-xs text-slate-400 mt-1">{comp.date}</div>
-                        </div>
-                        <span className="text-sm font-semibold text-emerald-400">${comp.cost}</span>
-                      </div>
-                    ))}
-                  </div>
-                </div>
-
-                <div className="bg-gradient-to-r from-blue-500/10 to-emerald-500/10 rounded-lg p-4 border border-blue-500/20">
-                  <div className="flex justify-between items-center mb-2">
-                    <span className="text-sm font-semibold text-slate-300">Inversión Mensual Total Recomendada:</span>
-                    <span className="text-lg font-bold text-emerald-400">
-                      ${athleteProfile.careerObjectives.totalMonthlyNeeds}
-                    </span>
-                  </div>
-                  <p className="text-xs text-slate-400">
-                    This investment is designed to accelerate your professional development and maximize your success
-                    opportunities.
-                  </p>
-                  <div className="mt-3 pt-3 border-t border-slate-600">
-                    <div className="flex items-center gap-2 text-xs text-slate-400">
-                      <div className="w-2 h-2 bg-blue-400 rounded-full"></div>
-                      <span>AI-optimized plan according to your profile and goals</span>
-                    </div>
-                  </div>
-                </div>
-              </CardContent>
-            </Card>
-          </TabsContent>
-
-          <TabsContent value="challenges" className="p-4 space-y-6">
-            <div className="grid gap-4">
-              {challenges.map((challenge) => (
-                <Card key={challenge.id} className="bg-slate-800/50 border-slate-700 backdrop-blur-sm">
-                  <CardContent className="p-4">
-                    <div className="flex items-center justify-between mb-3">
-                      <div className="flex items-center gap-3">
-                        <div
-                          className={`w-3 h-3 rounded-full ${challenge.completed ? "bg-emerald-500" : challenge.unlocked ? "bg-blue-500" : "bg-slate-600"}`}
-                        />
-                        <h3 className="font-semibold text-slate-100">{challenge.title}</h3>
-                      </div>
-                      {/* <span className="text-xs text-slate-400">{challenge.sport}</span> */}
-                    </div>
-                    <p className="text-sm text-slate-300 mb-3">{challenge.description}</p>
-                    <div className="flex items-center justify-between">
-                      <span className="text-xs text-slate-400">Difficulty: {challenge.difficulty}</span>
-                      <Button
-                        size="sm"
-                        variant={challenge.completed ? "secondary" : !challenge.unlocked ? "ghost" : "default"}
-                        disabled={!challenge.unlocked}
-                        onClick={() => setShowChallengeModal(challenge.id)}
-                        className="text-xs"
-                      >
-                        {challenge.completed ? "Completed" : !challenge.unlocked ? "Locked" : "Start Challenge"}
-                      </Button>
-                    </div>
-                  </CardContent>
-                </Card>
-              ))}
+              </div>
             </div>
-          </TabsContent>
 
-          <TabsContent value="community" className="p-4 space-y-6">
-            <Card className="bg-slate-800/50 border-slate-700 backdrop-blur-sm">
-              <CardHeader>
-                <CardTitle className="text-slate-100">My Videos</CardTitle>
-                <CardDescription className="text-slate-400">Recent reviews and interactions</CardDescription>
-              </CardHeader>
-              <CardContent className="space-y-4">
-                <div className="grid gap-4">
-                  <div className="bg-slate-700/30 rounded-lg p-4">
-                    <div className="flex items-center justify-between mb-2">
-                      <h4 className="font-medium text-slate-100">Ball Control Challenge</h4>
-                      <span className="text-xs text-emerald-400">Completed</span>
+            <div className="border-t border-slate-700">
+              <Tabs value={activeTab} onValueChange={setActiveTab} className="w-full">
+                <TabsList className="p-4 justify-center">
+                  <TabsTrigger value="profile" className="data-[state=active]:text-white">
+                    Perfil
+                  </TabsTrigger>
+                  <TabsTrigger value="challenges" className="data-[state=active]:text-white">
+                    Retos
+                  </TabsTrigger>
+                  <TabsTrigger value="objectives" className="data-[state=active]:text-white">
+                    Objetivos
+                  </TabsTrigger>
+                </TabsList>
+                <TabsContent value="profile" className="space-y-4 p-4">
+                  <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                    <div className="space-y-3">
+                      <h4 className="text-sm font-semibold text-slate-300">Estadísticas</h4>
+                      <div className="grid grid-cols-2 gap-4">
+                        {Object.entries(athleteProfile.stats).map(([key, value]) => (
+                          <div key={key} className="text-center">
+                            <div className="text-lg font-bold text-blue-400">{value}</div>
+                            <div className="text-xs text-slate-500 capitalize">{key}</div>
+                          </div>
+                        ))}
+                      </div>
                     </div>
-                    <div className="aspect-video bg-slate-900 rounded-lg mb-3 flex items-center justify-center">
-                      <span className="text-slate-400 text-sm">YouTube Video Preview</span>
-                    </div>
-                    <div className="flex items-center justify-between text-sm">
-                      <span className="text-slate-300">Community Rating: 8.5/10</span>
-                      <span className="text-slate-400">12 reviews</span>
+
+                    <div className="space-y-3">
+                      <h4 className="text-sm font-semibold text-slate-300">Habilidades</h4>
+                      <div className="space-y-2">
+                        {skillCategories.map((skill) => (
+                          <div key={skill.name} className="flex justify-between items-center">
+                            <span className={`text-sm text-slate-300 ${skill.color}`}>{skill.name}</span>
+                            <div className="flex items-center gap-2">
+                              <Progress value={skill.value} className="w-20 h-2 bg-slate-600" />
+                              <span className="text-sm font-semibold text-white">{skill.value}%</span>
+                            </div>
+                          </div>
+                        ))}
+                      </div>
                     </div>
                   </div>
+                </TabsContent>
 
-                  <div className="bg-slate-700/30 rounded-lg p-4">
-                    <div className="flex items-center justify-between mb-2">
-                      <h4 className="font-medium text-slate-100">Shooting Accuracy</h4>
-                      <span className="text-xs text-blue-400">Under Review</span>
-                    </div>
-                    <div className="aspect-video bg-slate-900 rounded-lg mb-3 flex items-center justify-center">
-                      <span className="text-slate-400 text-sm">YouTube Video Preview</span>
-                    </div>
-                    <div className="flex items-center justify-between text-sm">
-                      <span className="text-slate-300">Pending community review</span>
-                      <span className="text-slate-400">3 reviews</span>
-                    </div>
+                <TabsContent value="challenges" className="space-y-4 p-4">
+                  <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+                    {challenges.map((challenge) => (
+                      <Card
+                        key={challenge.id}
+                        className={`bg-slate-800/50 border-slate-700 backdrop-blur-sm ${
+                          challenge.unlocked
+                            ? "hover:scale-105 transition-transform duration-300 cursor-pointer"
+                            : "opacity-50"
+                        }`}
+                        onClick={() => {
+                          if (challenge.unlocked) {
+                            setSelectedChallenge(challenge)
+                            setShowChallengeModal(challenge.id)
+                          }
+                        }}
+                      >
+                        <CardHeader>
+                          <CardTitle className="text-white">{challenge.title}</CardTitle>
+                          <CardDescription className="text-slate-400">{challenge.description}</CardDescription>
+                        </CardHeader>
+                        <CardContent>
+                          <Badge className="bg-blue-500/20 text-blue-400 border-blue-500/30 text-xs">
+                            {challenge.difficulty}
+                          </Badge>
+                          <div className="flex items-center justify-between mt-2">
+                            <span className="text-sm text-slate-300">Progreso</span>
+                            <span className="text-sm text-white">
+                              {challenge.completed ? "Completado" : "Pendiente"}
+                            </span>
+                          </div>
+                        </CardContent>
+                      </Card>
+                    ))}
                   </div>
-                </div>
-              </CardContent>
-            </Card>
+                </TabsContent>
 
-            <Card className="bg-slate-800/50 border-slate-700 backdrop-blur-sm">
-              <CardHeader>
-                <CardTitle className="text-slate-100">Community Activity</CardTitle>
-                <CardDescription className="text-slate-400">Recent reviews and interactions</CardDescription>
-              </CardHeader>
-              <CardContent className="space-y-3">
-                <div className="flex items-start gap-3 p-3 bg-slate-700/20 rounded-lg">
-                  <div className="w-8 h-8 bg-gradient-to-br from-blue-500 to-purple-600 rounded-full flex items-center justify-center text-xs font-bold text-white">
-                    MR
+                <TabsContent value="objectives" className="space-y-4 p-4">
+                  <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                    {Object.entries(athleteProfile.careerObjectives).map(([key, objective]: [string, any]) => (
+                      <Card key={key} className="bg-slate-800/50 border-slate-700 backdrop-blur-sm">
+                        <CardHeader>
+                          <CardTitle className="text-white">{key}</CardTitle>
+                          <CardDescription className="text-slate-400">{objective.description}</CardDescription>
+                        </CardHeader>
+                        <CardContent className="space-y-3">
+                          <div className="flex items-center justify-between">
+                            <span className="text-sm text-slate-300">Plan Actual</span>
+                            <span className="text-sm text-white">{objective.currentPlan}</span>
+                          </div>
+                          <div className="flex items-center justify-between">
+                            <span className="text-sm text-slate-300">Plan Recomendado</span>
+                            <span className="text-sm text-emerald-400">{objective.recommendedPlan}</span>
+                          </div>
+                          <div className="flex items-center justify-between">
+                            <span className="text-sm text-slate-300">Costo Mensual</span>
+                            <span className="text-sm text-emerald-400">${objective.cost}</span>
+                          </div>
+                        </CardContent>
+                      </Card>
+                    ))}
                   </div>
-                  <div className="flex-1">
-                    <p className="text-sm text-slate-300">
-                      <span className="font-medium text-slate-100">Maria Rodriguez</span> rated your Ball Control video
+                  <div className="mt-4 p-3 bg-blue-500/10 border border-blue-500/20 rounded-lg">
+                    <div className="flex items-center justify-between">
+                      <span className="text-sm text-blue-400 font-medium">Total Necesario Mensual</span>
+                      <span className="text-lg font-bold text-blue-400">
+                        ${athleteProfile.careerObjectives.totalMonthlyNeeds}
+                      </span>
+                    </div>
+                    <p className="text-xs text-slate-400 mt-1">
+                      Inversión necesaria para alcanzar objetivos • Seguimiento transparente
                     </p>
-                    <p className="text-xs text-slate-400 mt-1">2 hours ago • 9/10</p>
                   </div>
-                </div>
-
-                <div className="flex items-start gap-3 p-3 bg-slate-700/20 rounded-lg">
-                  <div className="w-8 h-8 bg-gradient-to-br from-emerald-500 to-teal-600 rounded-full flex items-center justify-center text-xs font-bold text-white">
-                    JS
-                  </div>
-                  <div className="flex-1">
-                    <p className="text-sm text-slate-300">
-                      <span className="font-medium text-slate-100">James Smith</span> commented on your technique
-                    </p>
-                    <p className="text-xs text-slate-400 mt-1">5 hours ago • "Great form!"</p>
-                  </div>
-                </div>
-              </CardContent>
-            </Card>
-          </TabsContent>
-        </Tabs>
+                </TabsContent>
+              </Tabs>
+            </div>
+          </CardContent>
+        </Card>
       </main>
 
-      {showInvestmentModal && <InvestmentModal athlete={athleteCards.find((a) => a.id === showInvestmentModal)!} />}
-      {showVideoModal && <VideoModal athlete={athleteCards.find((a) => a.id === showVideoModal)!} />}
-      {showChallengeModal && <ChallengeModal challenge={challenges.find((c) => c.id === showChallengeModal)!} />}
+      {showChallengeModal && selectedChallenge && (
+        <ChallengeModal challenge={selectedChallenge} setShowChallengeModal={setShowChallengeModal} />
+      )}
     </div>
   )
 }
