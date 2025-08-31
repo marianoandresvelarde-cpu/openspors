@@ -4,6 +4,7 @@ import { GeistSans } from "geist/font/sans"
 import { GeistMono } from "geist/font/mono"
 import { Poppins } from "next/font/google"
 import { Suspense } from "react"
+import { Toaster } from "@/components/ui/toaster"
 import "./globals.css"
 
 const poppins = Poppins({
@@ -28,6 +29,7 @@ export default function RootLayout({
     <html lang="en" className="dark">
       <body className={`font-sans ${GeistSans.variable} ${GeistMono.variable} ${poppins.variable} antialiased`}>
         <Suspense fallback={null}>{children}</Suspense>
+        <Toaster />
       </body>
     </html>
   )

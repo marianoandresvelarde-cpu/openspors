@@ -10,6 +10,7 @@ import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
 import { Slider } from "@/components/ui/slider"
 import { Label } from "@/components/ui/label"
 import { Input } from "@/components/ui/input"
+import { useToast } from "@/hooks/use-toast"
 import {
   Trophy,
   Target,
@@ -551,6 +552,8 @@ import { footballTokenAPI, type FootballTokenContract, type Goal } from "../lib/
 import { WalletService, type WalletState } from "../lib/wallet"
 
 export default function SportifyApp() {
+  const { toast } = useToast()
+
   const [userType, setUserType] = useState<"selection" | "athlete" | "investor" | "brands" | null>(null)
   const [selectedAthlete, setSelectedAthlete] = useState<number | null>(null)
   const [activeTab, setActiveTab] = useState("profile")
@@ -663,6 +666,11 @@ export default function SportifyApp() {
         return
       }
 
+      toast({
+        title: "Deploying Contract",
+        description: `Creating smart contract for ${athlete.name}...`,
+      })
+
       const result = await footballTokenAPI.deployContract({
         playerWallet: walletState.address || `0x${athlete.id.toString().padStart(40, "0")}`, // Use connected wallet or mock
         platformWallet: "0x8ba1f109551bD432803012645cac136c777CC5ec", // Platform wallet
@@ -683,6 +691,11 @@ export default function SportifyApp() {
 
       console.log("[v0] Goal created:", goalResult)
 
+      toast({
+        title: "✅ Contract Deployed Successfully",
+        description: `Smart contract for ${athlete.name} has been created and is ready for investments.`,
+      })
+
       // Refresh contracts list
       await loadContracts()
 
@@ -691,6 +704,12 @@ export default function SportifyApp() {
       }
     } catch (error) {
       console.error("[v0] Error deploying contract:", error)
+
+      toast({
+        variant: "destructive",
+        title: "❌ Contract Deployment Failed",
+        description: error instanceof Error ? error.message : "Failed to deploy smart contract. Please try again.",
+      })
     } finally {
       setLoading(false)
     }
@@ -728,6 +747,11 @@ export default function SportifyApp() {
         return
       }
 
+      toast({
+        title: "Processing Investment",
+        description: `Investing $${investmentAmount[0].toLocaleString()} in ${athlete.name}...`,
+      })
+
       // Find athlete's contract
       const athleteContract = contracts.find((c) => c.name === `${athlete.name} Token`)
 
@@ -753,6 +777,18 @@ export default function SportifyApp() {
 
         if (result.goalCompleted) {
           console.log("[v0] 🎉 Goal completed! Funds distributed automatically (8% platform, 92% athlete)")
+
+          toast({
+            title: "🎉 GOAL COMPLETED!",
+            description: `Congratulations! ${athlete.name}'s funding goal of $${athlete.investmentGoal.toLocaleString()} has been reached! Your investment of $${investmentAmount[0].toLocaleString()} helped complete this milestone. Funds are being distributed automatically.`,
+            duration: 8000,
+          })
+        } else {
+          toast({
+            title: "💰 INVESTMENT SUCCESSFUL!",
+            description: `Your investment of $${investmentAmount[0].toLocaleString()} in ${athlete.name}'s career has been processed successfully! You now own tokens representing your stake in their future success.`,
+            duration: 6000,
+          })
         }
 
         // Refresh athlete goals
@@ -761,6 +797,12 @@ export default function SportifyApp() {
         console.log("[v0] No active goals found, creating new goal")
         await footballTokenAPI.createGoal(athleteContract.id, {
           targetAmount: athlete.investmentGoal,
+        })
+
+        toast({
+          title: "🚀 INVESTMENT SUCCESSFUL!",
+          description: `Congratulations! You've made the first investment of $${investmentAmount[0].toLocaleString()} in ${athlete.name}'s career! A new funding goal of of $${investmentAmount[0].toLocaleString()} has been created.`,
+          duration: 6000,
         })
       }
 
@@ -771,6 +813,13 @@ export default function SportifyApp() {
       }
     } catch (error) {
       console.error("[v0] Error processing investment:", error)
+
+      toast({
+        variant: "destructive",
+        title: "❌ INVESTMENT FAILED",
+        description: `Sorry, your investment of $${investmentAmount[0].toLocaleString()} could not be processed. ${error instanceof Error ? error.message : "Please check your wallet connection and try again."}`,
+        duration: 8000,
+      })
     } finally {
       setLoading(false)
     }
